@@ -1,0 +1,61 @@
+---
+title: "Final!!"
+author: "Anna Sverclova"
+date: "7/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+  pivot_wider(id_cols = SubMeasureDesc,
+              names_from = SubMeasureDesc,
+              values_from = Data_Value) %>% 
+
+
+
+  
+```{r}
+library(tidyverse)
+library(ggthemes)
+library(rmarkdown)
+library(ggthemes)
+library(lubridate)     # for date manipulation
+library(openintro)     # for the abbr2state() function
+library(gplots)        # for col2hex() function
+library(RColorBrewer)  # for color palettes
+library(sf)            # for working with spatial data
+library(leaflet)       # for highly customizable mapping
+library(ggthemes)      # for more themes (including theme_map())
+library(plotly)        # for the ggplotly() - basic interactivity
+library(gganimate)     # for adding animation layers to ggplots
+library(transformr)    # for "tweening" (gganimate)
+library(gifski)        # need the library for creating gifs but don't need to load each time
+library(shiny)   
+
+```
+
+
+```{r}
+ The_Tax_Burden_on_Tobacco_1970_2019 %>% 
+  ggplot(aes(x = Year, 
+             y = Data_Value)) +
+  geom_col()+
+  labs(title = "Nationwide Cigarette Sale Growth 1970-2020", 
+       y = "Cigarette Sales", 
+       x = "Year", 
+       caption = "Source: CDC") + 
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
+```
+
+```{r}
+
+```
+
+
+here's where I found that data 
+https://chronicdata.cdc.gov/Policy/The-Tax-Burden-on-Tobacco-Glossary-and-Methodology/fip8-rcng
+
+
